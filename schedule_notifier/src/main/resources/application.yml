@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: local # default environment
+
+# local 
+---
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:mysql://localhost:3306/osc
+    username: ENC(dMneCuujW3XvxIkfYQqIYQ==)
+    password: ENC(dMneCuujW3XvxIkfYQqIYQ==)
+    driver-class-name: com.mysql.jdbc.Driver
+    
+---    
+spring:
+  profiles: dev
+  datasource:
+    url: ENC(PMh+3FB4x1WMgfBOs4PVPfzGmNgh0O6zSCIixZntyZvtujCAgqbCgijTanz3o0E/)
+    username: ENC(dMneCuujW3XvxIkfYQqIYQ==)
+    password: ENC(dMneCuujW3XvxIkfYQqIYQ==)
+    driver-class-name: com.mysql.jdbc.Driver
+    
+---
+spring:
+  profiles: prd
+  datasource:
+    url: ENC(PMh+3FB4x1WMgfBOs4PVPfzGmNgh0O6zSCIixZntyZvtujCAgqbCgijTanz3o0E/)
+    username: ENC(dMneCuujW3XvxIkfYQqIYQ==)
+    password: ENC(dMneCuujW3XvxIkfYQqIYQ==)
+    driver-class-name: com.mysql.jdbc.Driver
+
+# jasypt encryptor
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
