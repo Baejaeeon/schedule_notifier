@@ -12,7 +12,7 @@ public class JasyptConfig {
 	// encrypt key
 	private static final String ENCRYPT_KEY = "osc";
 	
-	@Bean
+	@Bean("jasyptStringEncryptor")
 	public StringEncryptor stringEncryptor() {
 		PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
@@ -20,7 +20,7 @@ public class JasyptConfig {
         config.setAlgorithm("PBEWithMD5AndDES");
         config.setKeyObtentionIterations("1000");
         config.setPoolSize("1");
-        config.setProviderName("osc");
+        config.setProviderName("SunJCE");
         config.setSaltGeneratorClassName("org.jasypt.salt.RandomSaltGenerator");
         config.setStringOutputType("base64");
         encryptor.setConfig(config);

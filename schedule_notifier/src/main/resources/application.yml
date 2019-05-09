@@ -7,29 +7,41 @@ spring:
 spring:
   profiles: local
   datasource:
-    url: jdbc:mysql://localhost:3306/osc
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ENC(yyIMyOETkP0VoQlFimuVxq0De8Jrs+X0ojdmPF+KbJ7bbydyeDPWnWrr9OHkABFf)
     username: ENC(dMneCuujW3XvxIkfYQqIYQ==)
     password: ENC(dMneCuujW3XvxIkfYQqIYQ==)
-    driver-class-name: com.mysql.jdbc.Driver
     
 ---    
 spring:
   profiles: dev
   datasource:
-    url: ENC(PMh+3FB4x1WMgfBOs4PVPfzGmNgh0O6zSCIixZntyZvtujCAgqbCgijTanz3o0E/)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ENC(yyIMyOETkP0VoQlFimuVxq0De8Jrs+X0ojdmPF+KbJ7bbydyeDPWnWrr9OHkABFf)
     username: ENC(dMneCuujW3XvxIkfYQqIYQ==)
     password: ENC(dMneCuujW3XvxIkfYQqIYQ==)
-    driver-class-name: com.mysql.jdbc.Driver
     
 ---
 spring:
   profiles: prd
   datasource:
-    url: ENC(PMh+3FB4x1WMgfBOs4PVPfzGmNgh0O6zSCIixZntyZvtujCAgqbCgijTanz3o0E/)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ENC(yyIMyOETkP0VoQlFimuVxq0De8Jrs+X0ojdmPF+KbJ7bbydyeDPWnWrr9OHkABFf)
     username: ENC(dMneCuujW3XvxIkfYQqIYQ==)
     password: ENC(dMneCuujW3XvxIkfYQqIYQ==)
-    driver-class-name: com.mysql.jdbc.Driver
 
+---
+
+# Hibernate config
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    database: MYSQL
+# Show or not log for each sql query
+    show-sql: true
+  
 # jasypt encryptor
 jasypt:
   encryptor:

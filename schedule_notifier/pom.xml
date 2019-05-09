@@ -37,7 +37,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -51,6 +51,14 @@
 		    <artifactId>jasypt-spring-boot-starter</artifactId>
 		    <version>2.1.0</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/net.gpedro.integrations.slack/slack-webhook -->
+		<dependency>
+		    <groupId>net.gpedro.integrations.slack</groupId>
+		    <artifactId>slack-webhook</artifactId>
+		    <version>1.4.0</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
