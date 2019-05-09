@@ -1,0 +1,48 @@
+spring:
+  profiles:
+    active: local # default environment
+
+# local 
+---
+spring:
+  profiles: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ENC(yyIMyOETkP0VoQlFimuVxq0De8Jrs+X0ojdmPF+KbJ7bbydyeDPWnWrr9OHkABFf)
+    username: ENC(dMneCuujW3XvxIkfYQqIYQ==)
+    password: ENC(dMneCuujW3XvxIkfYQqIYQ==)
+    
+---    
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ENC(yyIMyOETkP0VoQlFimuVxq0De8Jrs+X0ojdmPF+KbJ7bbydyeDPWnWrr9OHkABFf)
+    username: ENC(dMneCuujW3XvxIkfYQqIYQ==)
+    password: ENC(dMneCuujW3XvxIkfYQqIYQ==)
+    
+---
+spring:
+  profiles: prd
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ENC(yyIMyOETkP0VoQlFimuVxq0De8Jrs+X0ojdmPF+KbJ7bbydyeDPWnWrr9OHkABFf)
+    username: ENC(dMneCuujW3XvxIkfYQqIYQ==)
+    password: ENC(dMneCuujW3XvxIkfYQqIYQ==)
+
+---
+
+# Hibernate config
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    database: MYSQL
+# Show or not log for each sql query
+    show-sql: true
+  
+# jasypt encryptor
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
