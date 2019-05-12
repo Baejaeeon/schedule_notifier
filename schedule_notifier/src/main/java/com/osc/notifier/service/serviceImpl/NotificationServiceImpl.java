@@ -1,6 +1,7 @@
 package com.osc.notifier.service.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.osc.notifier.domain.Notification;
@@ -23,6 +24,12 @@ public class NotificationServiceImpl implements NotificationService {
 	@Autowired
 	private NotificationRepository notificationRepository;
 	
+	@Value("${notification.slack.useYn}")
+	private String slackUseYn;
+	
+	@Value("${notification.gmail.useYn}")
+	private String gmailUseYn;
+	
 	@Override
 	public void sendNotification() {
 		// TODO Auto-generated method stub
@@ -34,11 +41,14 @@ public class NotificationServiceImpl implements NotificationService {
 		for (Notification noti : notificationList) {
 			
 			// 1. send notification for slack
-			slackService.sendMessage(noti);
+			if ("Y".equals(slackUseYn)) {
+				slackService.sendMessage(noti);
+			}
 			
 			// 2. send notification for gmail
-			gmailService.sendEmail(noti);
-			
+			if ("Y".equals(gmailUseYn)) {
+				gmailService.sendEmail(noti);
+			}
 		}
 	}
 }

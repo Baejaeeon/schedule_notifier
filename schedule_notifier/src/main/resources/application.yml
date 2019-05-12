@@ -45,4 +45,14 @@ spring:
 # jasypt encryptor
 jasypt:
   encryptor:
-    bean: jasyptStringEncryptor
+    bean: jasyptStringEncryptor  
+
+# notification config    
+notification:
+  cron:
+    schedule: 0 0/1 * * * ?
+  slack:
+    useYn: Y
+    webhookUrl: https://hooks.slack.com/services/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
+  gmail:
+    useYn: N
