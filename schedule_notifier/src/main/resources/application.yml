@@ -41,7 +41,19 @@ spring:
     database: MYSQL
 # Show or not log for each sql query
     show-sql: true
-  
+# mail service config
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: email address
+    password: email password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
 # jasypt encryptor
 jasypt:
   encryptor:
@@ -50,9 +62,10 @@ jasypt:
 # notification config    
 notification:
   cron:
-    schedule: 0 0/1 * * * ?
+    schedule: 0 0/5 * * * ?
   slack:
     useYn: Y
     webhookUrl: https://hooks.slack.com/services/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
   gmail:
-    useYn: N
+    useYn: Y
+    target: target email address here

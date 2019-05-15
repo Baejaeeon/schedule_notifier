@@ -14,9 +14,13 @@ public class EncryptTest {
         String url = "jdbc url here";
         String username = "username here";
         String password = "password here";
+        String email =  "email address here";
+        String mailPw = "email password here";
         
         System.out.println("before  URL :: " + url + " | after URL :: " + pbeEnc.encrypt(url));
         System.out.println("before  username :: " + username + " | after username :: " + pbeEnc.encrypt(username));
         System.out.println("before  password :: " + password + " | after password :: " + pbeEnc.encrypt(password));
+        System.out.println("before  email :: " + email + " | after email :: " + pbeEnc.encrypt(email));
+        System.out.println("before  emailPw :: " + mailPw + " | after emailPw :: " + pbeEnc.encrypt(mailPw));
 	}
 }
