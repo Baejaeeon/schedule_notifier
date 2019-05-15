@@ -37,17 +37,19 @@ public class NotificationServiceImpl implements NotificationService {
 		notification.setNotification("N");
 		
 		List<Notification> notificationList = notificationRepository.findByNotification(notification.getNotification());
-		 
-		for (Notification noti : notificationList) {
-			
-			// 1. send notification for slack
-			if ("Y".equals(slackUseYn)) {
-				slackService.sendMessage(noti);
-			}
-			
-			// 2. send notification for gmail
-			if ("Y".equals(gmailUseYn)) {
-				gmailService.sendEmail(noti);
+
+		if (notificationList != null) {
+			for (Notification noti : notificationList) {
+
+				// 1. send notification for slack
+				if ("Y".equals(slackUseYn)) {
+					slackService.sendMessage(noti);
+				}
+
+				// 2. send notification for gmail
+				if ("Y".equals(gmailUseYn)) {
+					gmailService.sendEmail(noti);
+				}
 			}
 		}
 	}
