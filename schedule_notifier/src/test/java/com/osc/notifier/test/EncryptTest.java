@@ -11,9 +11,9 @@ public class EncryptTest {
         pbeEnc.setAlgorithm("PBEWithMD5AndDES");
         pbeEnc.setPassword("osc");
          
-        String url = "jdbc:mysql://52.78.86.191:3306/OSCDB";
-        String username = "root";
-        String password = "root";
+        String url = "jdbc url here";
+        String username = "username here";
+        String password = "password here";
         
         System.out.println("before  URL :: " + url + " | after URL :: " + pbeEnc.encrypt(url));
         System.out.println("before  username :: " + username + " | after username :: " + pbeEnc.encrypt(username));
