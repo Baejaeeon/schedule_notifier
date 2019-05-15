@@ -34,7 +34,7 @@ public class NotificationServiceImpl implements NotificationService {
 	public void sendNotification() {
 		// TODO Auto-generated method stub
 		Notification notification = new Notification();
-		notification.setNotification("Y");
+		notification.setNotification("N");
 		
 		List<Notification> notificationList = notificationRepository.findByNotification(notification.getNotification());
 		 
