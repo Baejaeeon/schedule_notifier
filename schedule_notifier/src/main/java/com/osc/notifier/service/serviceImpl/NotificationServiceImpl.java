@@ -10,9 +10,11 @@ import com.osc.notifier.service.GmailService;
 import com.osc.notifier.service.NotificationService;
 import com.osc.notifier.service.SlackService;
 
+import javax.transaction.Transactional;
 import java.util.*;
 
 @Service
+@Transactional
 public class NotificationServiceImpl implements NotificationService {
 	
 	@Autowired
@@ -50,6 +52,9 @@ public class NotificationServiceImpl implements NotificationService {
 				if ("Y".equals(gmailUseYn)) {
 					gmailService.sendEmail(noti);
 				}
+
+				// update notification "Y"
+				noti.setNotification("Y");
 			}
 		}
 	}
